@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -eo pipefail
 
-TFC_ORGANIZATION=twdps
+TFC_ORGANIZATION=twplatformlabs
 TFC_WORKSPACE=orb-terraform-ci
 
 # setup curl parameters

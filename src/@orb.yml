@@ -10,5 +10,5 @@ description: |
   NOTE: v3.0.0 is a breaking change. Review the documentation in detail before upgrading.
 
 display:
-  source_url: "https://github.com/ThoughtWorks-DPS/orb-terraform"
-  home_url: "https://github.com/ThoughtWorks-DPS/orb-terraform"
+  source_url: "https://github.com/twplatformlabs/orb-terraform"
+  home_url: "https://github.com/twplatformlabs/orb-terraform"

@@ -8,7 +8,7 @@ description: |
   and curl on the image to successfully install terraform. See the setup-packages
   command for details.
 
-  See https://github.com/ThoughtWorks-DPS/circleci-aws-infra
+  See https://github.com/twplatformlabs/circleci-aws-infra
 
 parameters:
   executor-image:

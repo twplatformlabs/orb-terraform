@@ -108,7 +108,7 @@ workflows:
           trivy-scan: true
           trivy-commandline-args: config . --exit-code 0
           snyk-scan: true
-          snyk-organization: twdps
+          snyk-organization: twplatformlabs
           snyk-additional-args: --report --target-name=orb-terraform-ci
           checkov-scan: true
           checkov-additional-args: -d . --skip-check CKV_TF_1
@@ -132,7 +132,7 @@ workflows:
           working-directory: test
           workspace: ci
           tfc-workspace: orb-terraform-ci
-          tfc-organization: twdps
+          tfc-organization: twplatformlabs
           tfe-token: TFE_TOKEN
           terraform-var-file: ci.tfvars.json
           terraform-plan-outfile: ~/project/test/tfplan.json

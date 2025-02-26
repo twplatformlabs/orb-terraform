@@ -8,7 +8,7 @@ terraform {
   }
   backend "remote" {
     hostname     = "app.terraform.io"
-    organization = "twdps"
+    organization = "twplatformlabs"
     workspaces {
       prefix = "orb-terraform-"
     }

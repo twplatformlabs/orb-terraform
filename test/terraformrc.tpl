@@ -1,3 +1,3 @@
 credentials "app.terraform.io" {
-  token = "{{ op://empc-lab/svc-terraform-cloud/team-api-token }}"
+  token = "{{ op://platform/svc-terraform-cloud/team-api-token }}"
 }
