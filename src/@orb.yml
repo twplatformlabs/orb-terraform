@@ -8,6 +8,8 @@ description: |
   EMPC North America.
 
   NOTE: v3.0.0 is a breaking change. Review the documentation in detail before upgrading.
+  The GitHub organization for these resources has changed to twplatformlabs. Until further
+  notice, the CircleCI org slug will remain twdps.
 
 display:
   source_url: "https://github.com/twplatformlabs/orb-terraform"
