@@ -48,6 +48,7 @@ commands:
 
 jobs:
 
+  # temporarily disable snyk scan until they can replace an expired key
   test package install:
     docker:
       - image: twdps/circleci-infra-aws:alpine-stable
@@ -58,7 +59,7 @@ jobs:
           tflint-version: 0.50.3
           trivy-version: 0.50.4
           checkov-version: 3.2.70
-          snyk-version: 1.1291.0
+          # snyk-version: 1.1291.0
           terrascan-version: 1.18.3
           infracost-version: 0.10.29
       - run:
@@ -69,7 +70,7 @@ jobs:
             tflint -v | grep "0.50.3"
             trivy -v | grep "50.4"
             checkov -v | grep "3.2.70"
-            snyk -v | grep "1.1291.0"
+            # snyk -v | grep "1.1291.0"
             terrascan version | grep "1.18.3"
             infracost --version | grep "0.10.29"
 
