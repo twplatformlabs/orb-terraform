@@ -115,8 +115,6 @@ workflows:
           checkov-additional-args: -d . --skip-check CKV_TF_1
           terrascan-scan: true
           terrascan-custom-scan-args: -t aws -i terraform --output=yaml -d test/ --skip-rules="AC_AWS_0369"
-          infracost-scan: true
-          infracost-additional-args: breakdown --path .
           before-static-analysis:
             - terraform/install:
                 terrascan-version: 1.18.3
