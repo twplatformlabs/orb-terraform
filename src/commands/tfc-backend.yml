@@ -1,0 +1,30 @@
+# src/commands/tfc-backend.yml
+# yamllint disable rule:line-length
+---
+description: |
+  Used with terraform cloud. Creates a local terraform-backend.tf file
+  defining a `cloud` backend based on the workspace name reference.
+
+parameters:
+
+  tfc-organization:
+    description: Terraform Cloud or Enterprise Organization 
+    type: string
+
+  tfc-workspace:
+    description: Workspace name
+    type: string
+
+  tfc-workspace-prefix:
+    description: Workspace name prefix
+    type: string
+    default: ""
+
+steps:
+  - run:
+      name: Set terraform-backend.tf file for provided workspace
+      environment:
+        TFC_ORGANIZATION: << parameters.tfc-organization >>
+        TFC_WORKSPACE: << parameters.tfc-workspace >>
+        TFC_WORKSPACE_PREFIX: << parameters.tfc-workspace-prefix >>
+      command: <<include(scripts/set_tfc_workspace.sh)>>
