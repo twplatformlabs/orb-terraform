@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -eo pipefail
 
-cat <<EOF > terraform-backend.tf
+cat <<EOF > $OUTFILE
 terraform {
   cloud {
     organization = "${TFC_ORGANIZATION}"

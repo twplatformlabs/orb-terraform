@@ -32,4 +32,5 @@ steps:
         TFC_ORGANIZATION: << parameters.tfc-organization >>
         TFC_WORKSPACE: << parameters.tfc-workspace >>
         TFC_WORKSPACE_PREFIX: << parameters.tfc-workspace-prefix >>
+        OUTFILE: << parameters.outfile >>
       command: <<include(scripts/set_tfc_workspace.sh)>>
