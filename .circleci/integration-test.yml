@@ -83,7 +83,7 @@ jobs:
             echo "---"
             cat terraform-backend.tf 
             echo "---"
-            cat tpl/terraform-backend.tf 
+            cat test/terraform-backend.tf 
             echo "---"
             if ! cmp -l "terraform-backend.tf" "test/terraform-backend.tf"; then
               echo "terraform-backend.tf template does not match expected output"
