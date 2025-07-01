@@ -34,3 +34,6 @@ steps:
         TFC_WORKSPACE_PREFIX: << parameters.tfc-workspace-prefix >>
         OUTFILE: << parameters.outfile >>
       command: <<include(scripts/set_tfc_workspace.sh)>>
+  - run:
+      name: Show backend settings
+      command: cat << parameters.outfile >>
