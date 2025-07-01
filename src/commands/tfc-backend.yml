@@ -20,6 +20,11 @@ parameters:
     type: string
     default: ""
 
+  outfile:
+    description: Terraform backend definition filename
+    type: string
+    default: "terraform-backend.tf"
+
 steps:
   - run:
       name: Set terraform-backend.tf file for provided workspace

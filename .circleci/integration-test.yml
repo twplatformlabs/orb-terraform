@@ -77,6 +77,7 @@ jobs:
           tfc-organization: test-org
           tfc-workspace: workspace
           tfc-workspace-prefix: pipeline-
+          outfile: terraform-backend.cmp
       - run:
           name: validate terraform-backend.tf result
           command: |
@@ -85,7 +86,7 @@ jobs:
             echo "---"
             cat test/terraform-backend.tf 
             echo "---"
-            if ! cmp -l "terraform-backend.tf" "test/terraform-backend.tf"; then
+            if ! cmp -l "terraform-backend.cmp" "test/terraform-backend.tf"; then
               echo "terraform-backend.tf template does not match expected output"
               rm terraform-backend.tf
               exit 1
