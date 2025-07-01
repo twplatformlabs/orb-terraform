@@ -49,7 +49,7 @@ commands:
 jobs:
 
   # temporarily disable snyk scan until they can replace an expired key
-  test package install:
+  test commands:
     docker:
       - image: twdps/circleci-infra-aws:alpine-stable
     steps:
@@ -73,6 +73,17 @@ jobs:
             # snyk -v | grep "1.1291.0"
             terrascan version | grep "1.18.3"
             infracost --version | grep "0.10.29"
+      - terraform/tfc-backend:
+          tfc-organization: test-org
+          tfc-workspace: workspace
+          tfc-workspace-prefix: pipeline-
+      - run:
+          name: validate terraform-backend.tf result
+          command: |
+            if ! cmp -s "terraform-backend.tf" "test/terraform-backend.tf"; then
+              echo "terraform-backend.tf template does not match expected output"
+              exit 1
+            fi 
 
   test terraformrc:
     docker:
@@ -94,7 +105,7 @@ workflows:
 
   integration tests:
     jobs:
-      - test package install
+      - test commands
 
       - test terraformrc:
           context: *context

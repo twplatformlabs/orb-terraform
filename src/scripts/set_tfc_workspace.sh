@@ -12,4 +12,5 @@ terraform {
     }
   }
 }
+
 EOF
