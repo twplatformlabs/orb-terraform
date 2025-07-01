@@ -80,9 +80,15 @@ jobs:
       - run:
           name: validate terraform-backend.tf result
           command: |
+            echo "---"
+            cat terraform-backend.tf 
+            echo "---"
             if ! cmp -s "terraform-backend.tf" "test/terraform-backend.tf"; then
               echo "terraform-backend.tf template does not match expected output"
+              rm terraform-backend.tf
               exit 1
+            else
+              rm terraform-backend.tf
             fi 
 
   test terraformrc:
