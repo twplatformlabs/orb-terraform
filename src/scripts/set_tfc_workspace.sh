@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -eo pipefail
 
-cat <<EOF > $OUTFILE
+cat <<EOF > "$OUTFILE"
 terraform {
   cloud {
     organization = "${TFC_ORGANIZATION}"
