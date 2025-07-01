@@ -8,7 +8,7 @@ description: |
 parameters:
 
   tfc-organization:
-    description: Terraform Cloud or Enterprise Organization 
+    description: Terraform Cloud or Enterprise Organization
     type: string
 
   tfc-workspace:
