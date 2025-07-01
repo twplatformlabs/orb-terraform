@@ -88,10 +88,7 @@ jobs:
             echo "---"
             if ! cmp -l "terraform-backend.cmp" "test/terraform-backend.cmp"; then
               echo "terraform-backend.tf template does not match expected output"
-              rm terraform-backend.tf
               exit 1
-            else
-              rm terraform-backend.tf
             fi 
 
   test terraformrc:
