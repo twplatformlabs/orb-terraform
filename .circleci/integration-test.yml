@@ -55,11 +55,11 @@ jobs:
     steps:
       - checkout
       - terraform/install:
-          terraform-version: 1.8.2
-          tflint-version: 0.50.3
-          trivy-version: 0.50.4
-          checkov-version: 3.2.70
-          # snyk-version: 1.1291.0
+          terraform-version: 1.14.1
+          tflint-version: 0.60.0
+          trivy-version: 0.70.0
+          checkov-version: 3.2.521
+          snyk-version: 1.1304.0
           terrascan-version: 1.18.3
           infracost-version: 0.10.29
       - run:
@@ -68,9 +68,9 @@ jobs:
             set -exo pipefail
             terraform -v | grep "1.8.2"
             tflint -v | grep "0.50.3"
-            trivy -v | grep "50.4"
+            trivy -v | grep "0.70.0"
             checkov -v | grep "3.2.70"
-            # snyk -v | grep "1.1291.0"
+            snyk -v | grep "1.1304.0"
             terrascan version | grep "1.18.3"
             infracost --version | grep "0.10.29"
       - terraform/tfc-backend:
