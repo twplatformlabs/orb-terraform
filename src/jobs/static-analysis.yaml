@@ -48,9 +48,9 @@ parameters:
 
   executor-image:
     description: |
-      Available override. Default is docker.io/twdps/circleci-infra-aws:alpine-stable.
+      Available override. Default is ghcr.io/twplatformlabs/circleci-infra-aws:alpine-latest.
     type: string
-    default: docker.io/twdps/circleci-infra-aws:alpine-stable
+    default: ghcr.io/twplatformlabs/circleci-infra-aws:alpine-latest
 
   executor-registry-username:
     description: |

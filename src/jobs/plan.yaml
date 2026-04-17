@@ -10,7 +10,7 @@ description: >
   - Set desired terraform version. Default is the version installed on the executor.
   - Specify a working-directory, default is .
   - Select a terraform workspace, default is none.
-  - Use your own docker image executor. Default is twdps/circleci-infra-aws:alpine-stable
+  - Use your own docker image executor. Default is ghcr.io/twplatformlabs/circleci-infra-aws:alpine-latest
   - Set an executor resource-class, default is medium
   - Set the executor shell process launch configuration, default is '/bin/bash -eo pipefail'
   - Set name of human readable plan file. Default is tfplan.json
@@ -69,9 +69,9 @@ parameters:
 
   executor-image:
     description: |
-      Available override. Default is docker.io/twdps/circleci-infra-aws:alpine-stable.
+      Available override. Default is ghcr.io/twplatformlabs/circleci-infra-aws:alpine-latest
     type: string
-    default: docker.io/twdps/circleci-infra-aws:alpine-stable
+    default: ghcr.io/twplatformlabs/circleci-infra-aws:alpine-latest
 
   executor-registry-username:
     description: |
