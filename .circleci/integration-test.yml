@@ -66,10 +66,10 @@ jobs:
           name: confirm installed version
           command: |
             set -exo pipefail
-            terraform -v | grep "1.8.2"
-            tflint -v | grep "0.50.3"
+            terraform -v | grep "1.14.1"
+            tflint -v | grep "0.60.0"
             trivy -v | grep "0.70.0"
-            checkov -v | grep "3.2.70"
+            checkov -v | grep "3.2.521"
             snyk -v | grep "1.1304.0"
             terrascan version | grep "1.18.3"
             infracost --version | grep "0.10.29"
