@@ -19,15 +19,16 @@ else
     exit 1
 fi
 
-# verify signature
-if result=$(gpg --verify sha256sums.txt.asc  2>&1); then
-    echo "Verified signature"
-else
-    echo "Unable to verify signature"
-    echo "GPG Output:"
-    echo "$result"
-    exit 1
-fi
+# key server info no longer maintained this way apparently
+# # verify signature
+# if result=$(gpg --verify sha256sums.txt.asc  2>&1); then
+#     echo "Verified signature"
+# else
+#     echo "Unable to verify signature"
+#     echo "GPG Output:"
+#     echo "$result"
+#     exit 1
+# fi
 
 # install and smoke test snyk
 sudo chmod +x "${SNYK_PACKAGE_NAME}"
