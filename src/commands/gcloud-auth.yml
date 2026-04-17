@@ -1,0 +1,28 @@
+# src/commands/gcloud-auth.yml
+# yamllint disable rule:line-length
+---
+
+description: |
+  authenticate using service account credentials json file
+
+  NOTE YET RELEASED
+
+parameters:
+
+  sa-key:
+    description: ENV variable containing the glcoud service account key json file contents in base64 encoded format
+    type: env_var_name
+    default: GC_SA_KEY
+
+  project-id:
+    description: GCP project id
+    type: env_var_name
+    default: GC_PROJECT_ID
+
+steps:
+  - run:
+      name: authenticate using service account credentials
+      command: |
+        echo ${<< parameters.sa-key >> }| base64 -d > sa-key.json
+        gcloud auth activate-service-account --key-file "sa-key.json"
+        gcloud --quiet config set project ${<< parameters.project-id >>}
